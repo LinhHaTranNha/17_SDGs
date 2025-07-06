@@ -1,4 +1,5 @@
 import logo from "./logo.png";
+import light from "./day light switch new 1.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
@@ -28,44 +29,61 @@ export function Welcome() {
   return (
     <div className="min-h-screen bg-white text-black font-sans">
       {/* Header */}
-      <header className="border-b border-gray-200 px-6 py-2 flex items-center justify-between">
+      <header className="border-b border-gray-200 px-6 py-2 flex items-center justify-between bg-white">
+        {/* Logo */}
         <div className="flex items-center gap-2">
           <img src={logo} alt="SDGs Logo" className="h-10 w-auto" />
         </div>
-        <nav className="hidden md:flex gap-6 text-sm font-medium">
+        {/* Menu */}
+        <nav className="flex gap-8 text-base font-semibold">
           <a href="#" className="hover:underline">Excersises</a>
           <a href="#" className="hover:underline">Certificates</a>
           <a href="#" className="hover:underline">Games</a>
           <a href="#" className="hover:underline">News</a>
         </nav>
-        <div className="flex items-center gap-3">
-          <input type="text" placeholder="Search..." className="border rounded px-3 py-1 text-sm" />
-          <a href="#" className="text-sm font-medium hover:underline">About us</a>
-          <a href="#" className="text-sm font-medium hover:underline">Help</a>
-          <a href="#" className="text-sm font-medium hover:underline">Languages</a>
-          <div className="w-8 h-8 rounded-full bg-gray-300" />
+        {/* Search + User */}
+        <div className="flex items-center gap-6">
+          <input
+            type="text"
+            placeholder="Search..."
+            className="bg-black text-white rounded-lg px-6 py-2 text-base placeholder-gray-300 focus:outline-none"
+            style={{ minWidth: 300, maxWidth: 400 }}
+          />
+          <a href="#" className="text-base font-semibold hover:underline">About us</a>
+          <a href="#" className="text-base font-semibold hover:underline">Help</a>
+          <a href="#" className="text-base font-semibold hover:underline">Languages</a>
+          <div className="w-8 h-8 rounded-full border border-black flex items-center justify-center overflow-hidden">
+            {/* Avatar hoặc icon */}
+            <img src={light} alt="light" className="w-8 h-8" />
+          </div>
         </div>
       </header>
       {/* Submenu - SDGs horizontal scroll with Swiper */}
-      <div className="border-b border-gray-100 px-2 py-1 bg-white">
+      <div className="border-b border-gray-100 px-2 py-1 bg-white overflow-x-auto">
         <Swiper
           modules={[Navigation]}
-          navigation
-          slidesPerView={4}
-          spaceBetween={8}
-          breakpoints={{
-            640: { slidesPerView: 6 },
-            1024: { slidesPerView: 10 },
+          navigation={{
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
           }}
+          slidesPerView="auto"
+          spaceBetween={20} // 5cm = 188px
           className="!px-4"
         >
           {SDGS.map((g) => (
-            <SwiperSlide key={g.num}>
-              <span className="inline-block text-xs font-semibold text-gray-700 hover:text-green-700 cursor-pointer whitespace-nowrap px-2 py-1">
+            <SwiperSlide
+              key={g.num}
+              className="flex items-center justify-center"
+              style={{ width: "auto" }} // Đảm bảo slide rộng theo nội dung
+            >
+              <span className="inline-block text-xs md:text-sm font-semibold text-gray-700 hover:text-green-700 cursor-pointer whitespace-nowrap px-6 py-2 rounded transition-colors duration-150 hover:bg-green-100">
                 {g.title}
               </span>
             </SwiperSlide>
           ))}
+          {/* Custom navigation buttons (ẩn trên mobile) */}
+          <div className="swiper-button-prev hidden md:block !text-green-600" />
+          <div className="swiper-button-next hidden md:block !text-green-600" />
         </Swiper>
       </div>
       {/* Main content */}
