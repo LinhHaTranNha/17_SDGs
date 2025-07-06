@@ -1,4 +1,5 @@
 import logo from "./logo.png";
+import light from "./day light switch new 1.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
@@ -28,22 +29,33 @@ export function Welcome() {
   return (
     <div className="min-h-screen bg-white text-black font-sans">
       {/* Header */}
-      <header className="border-b border-gray-200 px-6 py-2 flex items-center justify-between">
+      <header className="border-b border-gray-200 px-6 py-2 flex items-center justify-between bg-white">
+        {/* Logo */}
         <div className="flex items-center gap-2">
           <img src={logo} alt="SDGs Logo" className="h-10 w-auto" />
         </div>
-        <nav className="hidden md:flex gap-6 text-sm font-medium">
+        {/* Menu */}
+        <nav className="flex gap-8 text-base font-semibold">
           <a href="#" className="hover:underline">Excersises</a>
           <a href="#" className="hover:underline">Certificates</a>
           <a href="#" className="hover:underline">Games</a>
           <a href="#" className="hover:underline">News</a>
         </nav>
-        <div className="flex items-center gap-3">
-          <input type="text" placeholder="Search..." className="border rounded px-3 py-1 text-sm" />
-          <a href="#" className="text-sm font-medium hover:underline">About us</a>
-          <a href="#" className="text-sm font-medium hover:underline">Help</a>
-          <a href="#" className="text-sm font-medium hover:underline">Languages</a>
-          <div className="w-8 h-8 rounded-full bg-gray-300" />
+        {/* Search + User */}
+        <div className="flex items-center gap-6">
+          <input
+            type="text"
+            placeholder="Search..."
+            className="bg-black text-white rounded-lg px-6 py-2 text-base placeholder-gray-300 focus:outline-none"
+            style={{ minWidth: 300, maxWidth: 400 }}
+          />
+          <a href="#" className="text-base font-semibold hover:underline">About us</a>
+          <a href="#" className="text-base font-semibold hover:underline">Help</a>
+          <a href="#" className="text-base font-semibold hover:underline">Languages</a>
+          <div className="w-8 h-8 rounded-full border border-black flex items-center justify-center overflow-hidden">
+            {/* Avatar hoặc icon */}
+            <img src={light} alt="light" className="w-8 h-8" />
+          </div>
         </div>
       </header>
       {/* Submenu - SDGs horizontal scroll with Swiper */}
