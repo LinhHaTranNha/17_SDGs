@@ -47,24 +47,24 @@ export function Welcome() {
         </div>
       </header>
       {/* Submenu - SDGs horizontal scroll with Swiper */}
-      <div className="border-b border-gray-100 px-2 py-1 bg-white">
+      <div className="border-b border-gray-100 px-2 py-1 bg-white overflow-x-auto">
         <Swiper
           modules={[Navigation]}
           navigation={{
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
           }}
-          slidesPerView={4}
-          spaceBetween={16}
-          breakpoints={{
-            640: { slidesPerView: 6, spaceBetween: 20 },
-            1024: { slidesPerView: 10, spaceBetween: 24 },
-          }}
+          slidesPerView="auto"
+          spaceBetween={20} // 5cm = 188px
           className="!px-4"
         >
           {SDGS.map((g) => (
-            <SwiperSlide key={g.num} className="flex items-center justify-center">
-              <span className="inline-block text-xs md:text-sm font-semibold text-gray-700 hover:text-green-700 cursor-pointer whitespace-nowrap px-4 py-2 rounded transition-colors duration-150 hover:bg-green-100">
+            <SwiperSlide
+              key={g.num}
+              className="flex items-center justify-center"
+              style={{ width: "auto" }} // Đảm bảo slide rộng theo nội dung
+            >
+              <span className="inline-block text-xs md:text-sm font-semibold text-gray-700 hover:text-green-700 cursor-pointer whitespace-nowrap px-6 py-2 rounded transition-colors duration-150 hover:bg-green-100">
                 {g.title}
               </span>
             </SwiperSlide>
