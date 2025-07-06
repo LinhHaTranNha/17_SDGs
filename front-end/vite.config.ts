@@ -11,4 +11,9 @@ export default defineConfig({
       "@": path.resolve(__dirname),
     },
   },
+  preview: {
+    host: true,
+    port: 5173,
+    allowedHosts: ["one7-sdgs.onrender.com"],
+  },
 });
