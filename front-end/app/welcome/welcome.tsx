@@ -35,23 +35,25 @@ export function Welcome() {
           <img src={logo} alt="SDGs Logo" className="h-10 w-auto" />
         </div>
         {/* Menu */}
-        <nav className="flex gap-8 text-base font-semibold">
+        <nav className="flex gap-20 text-base font-semibold">
           <a href="#" className="hover:underline">Excersises</a>
           <a href="#" className="hover:underline">Certificates</a>
           <a href="#" className="hover:underline">Games</a>
           <a href="#" className="hover:underline">News</a>
         </nav>
         {/* Search + User */}
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-10">
           <input
             type="text"
             placeholder="Search..."
             className="bg-black text-white rounded-lg px-6 py-2 text-base placeholder-gray-300 focus:outline-none"
-            style={{ minWidth: 300, maxWidth: 400 }}
+            style={{ minWidth: 200, maxWidth: 800 }}
           />
+        <nav className="flex gap-20 text-base font-semibold">
           <a href="#" className="text-base font-semibold hover:underline">About us</a>
           <a href="#" className="text-base font-semibold hover:underline">Help</a>
           <a href="#" className="text-base font-semibold hover:underline">Languages</a>
+        </nav>
           <div className="w-8 h-8 rounded-full border border-black flex items-center justify-center overflow-hidden">
             {/* Avatar hoặc icon */}
             <img src={light} alt="light" className="w-8 h-8" />
