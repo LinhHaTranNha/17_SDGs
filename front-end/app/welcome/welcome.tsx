@@ -89,7 +89,7 @@ export function Welcome() {
       {/* Main content */}
       <main className="max-w-5xl mx-auto px-4 py-10">
         <h1 className="text-center text-4xl md:text-5xl font-bold mb-4">
-          <span className="text-green-600">17 SUSTAINABLE DEVELOPMENT</span> <span className="text-black">GOALS</span>
+          <span className="text-black">17</span> <span className="text-green-600"> SUSTAINABLE DEVELOPMENT</span> <span className="text-black">GOALS</span>
         </h1>
         <p className="text-center text-gray-700 max-w-3xl mx-auto mb-8">
           The 17 Sustainable Development Goals (SDGs), adopted by all UN Member States in 2015, form the heart of the 2030 Agenda for Sustainable Development—a global blueprint to end poverty, reduce inequality, and protect the planet. These interconnected goals aim to ensure access to quality education, clean water, affordable energy, sustainable cities, climate action, and more. Together, they provide a universal call to action for governments, businesses, and communities to build a more inclusive, resilient, and sustainable future for all.<br />- United Nation -
